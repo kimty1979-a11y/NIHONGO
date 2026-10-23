@@ -1,0 +1,20 @@
+{
+  "name": "日本語 데일리",
+  "short_name": "日本語",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#123e69",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "./",
+  "scope": "./",
+  "lang": "ko",
+  "description": "그림과 실생활 표현으로 매일 배우는 일본어"
+}
