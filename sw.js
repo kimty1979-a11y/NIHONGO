@@ -1,8 +1,8 @@
-const CACHE = 'nihongo-daily-v0.1.0';
+const CACHE = 'nihongo-daily-v0.1.1';
 const ROOT = new URL('./', self.location.href);
 const ASSETS = ['index.html','style.css','app.js','icon.png','manifest.webmanifest'].map(path => new URL(path, ROOT).href);
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('nihongo-daily-') && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
